@@ -5,6 +5,10 @@ const multiplier = {
   },
 }
 Array.prototype.myMap = function (callback, thisArg) {
+  if (typeof callback !== "function") {
+    return console.error(callback + " is not function")
+  }
+  
   let result = []
   for (let i = 0; i < this.length; i++) {
     if (i in this) {
